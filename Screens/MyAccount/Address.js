@@ -35,14 +35,14 @@ const AddressList = ({item, deleteShipping, index, handleSelectValue, billing}) 
             marginVertical : 5,
             borderRadius : 5,
             paddingHorizontal : 20,
-            borderColor : 'red'
+            borderColor : '#c60607'
         },
         btnText : {
             textAlign : 'center'
         },
         select : {
             position : 'absolute',
-            backgroundColor : billing===index?'red':'white',
+            backgroundColor : billing===index?'#c60607':'white',
             padding : 10,
             right : 10,
             top : 20,
@@ -58,11 +58,11 @@ const AddressList = ({item, deleteShipping, index, handleSelectValue, billing}) 
             <Text style={styles.subText}>{item.address_1 + ' ' + item.address_2 + ' ' + item.city + ' ' + item.state + ' ' + item.pincode + ' ' + item.country}</Text>
             <Text style={styles.subText}>+91 {item.phone}</Text>
             <View style={[styles.btnView,{width : width*0.4}]}>
-                <TouchableOpacity style={[styles.btn,{backgroundColor : 'red'}]}>
+                <TouchableOpacity style={[styles.btn,{backgroundColor : '#c60607'}]}>
                     <Text style={[styles.btnText,{color : 'white'}]}>Edit</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>deleteShipping(item.id)} style={[styles.btn]}>
-                    <Text style={[styles.btnText,{color : 'red'}]}>Delete</Text>
+                    <Text style={[styles.btnText,{color : '#c60607'}]}>Delete</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.select}></View>
@@ -107,7 +107,7 @@ const Address = ({shipping, route, navigation}) => {
             marginVertical : 5,
             borderRadius : 5,
             paddingHorizontal : 20,
-            borderColor : 'red'
+            borderColor : '#c60607'
         },
         btnText : {
             textAlign : 'center'
@@ -127,12 +127,12 @@ const Address = ({shipping, route, navigation}) => {
                     <View style={[styles.btnView]}>
                         <TouchableOpacity
                             onPress={()=>setShow(!show)}
-                        style={[styles.btn, {backgroundColor : 'red',width : width*0.45}]}>
+                        style={[styles.btn, {backgroundColor : '#c60607',width : width*0.45}]}>
                             <Text style={[styles.btnText, {color : 'white'}]}>Add New Address</Text>
                         </TouchableOpacity>
                         {route.params.parent==='cart'
                         ?<TouchableOpacity onPress={()=>navigation.navigate('Summary',{index:billing})} style={[styles.btn, {width : width*0.45}]}>
-                            <Text style={[styles.btnText, {color : 'red'}]}>Proceed</Text>
+                            <Text style={[styles.btnText, {color : '#c60607'}]}>Proceed</Text>
                         </TouchableOpacity>
                         :console.log('')}
                     </View>

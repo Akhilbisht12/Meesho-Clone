@@ -109,7 +109,7 @@ const ProductComp  = ({item, image, addToCart, addToWishlist}) => {
             marginRight : 10
         },
         icon : {
-            backgroundColor : 'red',
+            backgroundColor : '#c60607',
             borderRadius : 5,
             color : 'white',
             padding : 10
@@ -126,7 +126,8 @@ const ProductComp  = ({item, image, addToCart, addToWishlist}) => {
             borderColor : 'green',
             borderRadius : 5,
             paddingHorizontal : 20,
-            paddingVertical : 5
+            paddingVertical : 5,
+            backgroundColor : 'green'
         },
         wishlist : {
             
@@ -170,11 +171,11 @@ const ProductComp  = ({item, image, addToCart, addToWishlist}) => {
                         </View>
                     <View style={styles.purchase}>
                         <TouchableOpacity style={styles.shareBtn} onPress={()=>share()}>
-                            <Text style={{fontSize : 20, color : 'green'}}>Share</Text>
-                            <Icon color='green' style={{marginHorizontal : 5}} size={20} name='whatsapp'/>
+                            <Text style={{fontSize : 20, color : 'white'}}>Share</Text>
+                            <Icon color='white' style={{marginHorizontal : 5}} size={20} name='whatsapp'/>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={()=>addToCart(CartItem)}>
-                            <Icon style={styles.icon} name='shopping-basket'/>
+                            <Ionicon style={styles.icon} size={15} name='cart'/>
                         </TouchableOpacity>
                     </View>
                 </View>

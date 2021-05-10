@@ -9,6 +9,14 @@ import { deleteUser } from '../Redux/User/User-Action';
 
 const CustomDrawer = (props,deleteUser) => {
 
+    const handleLogout = () => {
+        AsyncStorage.clear()
+        .then((response)=>{
+            console.log(response);
+            props.navigation.navigate('Login')
+        })
+    }
+
     return (
         <View style={{flex : 1}}>
             <DrawerContentScrollView>
@@ -37,21 +45,21 @@ const CustomDrawer = (props,deleteUser) => {
                         <View>
                             <DrawerItem
                             icon={()=>(
-                                <Icon name='home' color='red' size={20}/>
+                                <Icon name='home' color='#c60607' size={20}/>
                             )}
                             label='Home'
                             onPress={()=>{props.navigation.navigate('Home')}}
                             />
                             <DrawerItem
                             icon={()=>(
-                                <Icon name='shopping-cart' color='red' size={20}/>
+                                <Icon name='shopping-cart' color='#c60607' size={20}/>
                             )}
                             label='Cart'
                             onPress={()=>{props.navigation.navigate('Cart')}}
                             />
                             <DrawerItem
                             icon={()=>(
-                                <Icon name='box' color='red' size={20}/>
+                                <Icon name='box' color='#c60607' size={20}/>
                             )}
                             label='My Orders'
                             onPress={()=>{props.navigation.navigate('MyOrders')}}
@@ -65,14 +73,14 @@ const CustomDrawer = (props,deleteUser) => {
                             /> */}
                             <DrawerItem
                             icon={()=>(
-                                <Icon name='user-slash' color='red' size={20}/>
+                                <Icon name='user-slash' color='#c60607' size={20}/>
                             )}
                             label='Logout'
-                            onPress={()=>AsyncStorage.clear()}
+                            onPress={()=>handleLogout()}
                             />
                         </View>
                     </View>
-                    <View style={{alignItems : 'center', backgroundColor : 'red', paddingVertical : 5}}>
+                    <View style={{alignItems : 'center', backgroundColor : '#c60607', paddingVertical : 5}}>
                         <TouchableOpacity style={{flexDirection : 'row'}} onPress={()=>Linking.openURL('https://www.upgrate.in/')}>
                             <Text style={{color : 'white'}}>Developed With Love By</Text>
                             <Text style={{color : 'white', fontWeight : 'bold'}}> Upgrate.in</Text>
@@ -96,7 +104,7 @@ const styles = StyleSheet.create({
     userPanel : {
         alignItems : 'center',
         paddingVertical : 20,
-        backgroundColor : 'red',
+        backgroundColor : '#c60607',
         marginBottom : 20,
         marginTop : 0
     },

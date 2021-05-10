@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     },
     trash : {
         padding : 10,
-        backgroundColor : 'red',
+        backgroundColor : '#c60607',
         borderRadius : 10,
         marginLeft : 10
     },

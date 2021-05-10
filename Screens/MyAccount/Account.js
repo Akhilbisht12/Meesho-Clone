@@ -40,14 +40,14 @@ export default function Account() {
                 <View>
                     <List name='cube' title='My Orders' navigate='MyOrders'/>
                     <List name='card' title='My Earning' navigate='Earnings'/>
-                    <List name='heart' title='My Wishlist' navigate='Cart'/>
+                    <List name='heart' title='My Wishlist' navigate='Wishlist'/>
                     <TouchableOpacity onPress={()=>navigation.navigate('Address',{parent : 'Home'})}>
                         <View style={styles.listMain}>
                             <Icon name='locate' color='grey' size={30}/>
                             <Text style={styles.listTitle}>Address</Text>
                         </View>
                     </TouchableOpacity>
-                    <List name='cash' title='Bank Details' navigate='Details'/>
+                    <List name='cash' title='Bank Details' navigate='BankDetails'/>
                     <List name='information-circle' title='Help & FAQ' navigate='Cart'/>
                     <List name='settings' title='Settings' navigate='Cart'/>
                 </View>

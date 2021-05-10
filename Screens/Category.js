@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         borderWidth : 2,
         margin : 5,
         padding : 5,
-        borderColor : 'red'
+        borderColor : '#c60607'
     },
     catName : {
         fontWeight : '600',

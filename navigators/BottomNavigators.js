@@ -35,7 +35,7 @@ export default function BottomNavigators() {
       },
     })}
     tabBarOptions={{
-      activeTintColor: 'red',
+      activeTintColor: '#c60607',
       inactiveTintColor: 'gray',
     }}
   >

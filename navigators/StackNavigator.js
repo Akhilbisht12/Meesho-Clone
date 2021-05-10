@@ -24,6 +24,7 @@ import Earnings from "../Screens/MyAccount/Earnings";
 import Details from "../Screens/OnBoardingScreens/Details";
 import Axios from 'axios'
 import Wishlist from "../Screens/Wishlist";
+import BankDetails from "../Screens/MyAccount/BankDetails";
 
 const data = {
   screenOne : {
@@ -70,19 +71,7 @@ function ScreenOne(){
 
 const StackNavigator = ({profile, shipping, wishlist}) => {
 
-  Axios.post('https://www.dropmarts.com/wp-json/wp/v2/users/7',{
-    data : {
-      total_earnings : 40,
-    },
-    headers : {
-      "Authorization" : `Bearer ${profile.token}`
-    }
-  })
-  .then((response)=>{
-    console.log(response)
-  })
-
-  console.log(profile)
+  // console.log(profile)
   // console.log(billing)
   const Stack = createStackNavigator();
   // const [initialRoute, setInitialRoute] = useState('');
@@ -122,6 +111,7 @@ const StackNavigator = ({profile, shipping, wishlist}) => {
         <Stack.Screen name="Details" component={Details} />
         <Stack.Screen name="Wishlist" component={Wishlist} />
         <Stack.Screen name="Earnings" component={Earnings} />
+        <Stack.Screen name="BankDetails" component={BankDetails} />
       </Stack.Navigator>
     )
   }

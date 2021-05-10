@@ -16,7 +16,7 @@ const Header = ({cart}) => {
     }, [cart, counter, setCounter])
     return (
         <View>
-            <StatusBar backgroundColor='red'/>
+            <StatusBar backgroundColor='#c60607'/>
             <View style={styles.header}>
                 <View style={{flexDirection : 'row', alignItems : 'center'}}>
                     <TouchableOpacity onPress={()=>navigation.openDrawer()}>
@@ -58,7 +58,7 @@ const styles= StyleSheet.create({
         height : 50,
         paddingHorizontal : 20,
         alignItems : 'center',
-        backgroundColor : 'red',
+        backgroundColor : '#c60607',
     },
     icon : {
         color : 'white',

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet, Dimensions, ScrollView } from 'react-native'
+import { View, Text, Image, StyleSheet, Dimensions, ScrollView, TextInput } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { connect } from 'react-redux'
 import TitleHeader from '../Components/TitleHeader';
@@ -33,19 +33,28 @@ const Wishlist = ({wishlist, addToCart, removeFromWishlist}) => {
                     <Image style={styles.wishImg} source={{uri : item.image}}/>
                 </View>
                 <View>
-                    <Text style={styles.bdTxt}>{item.name}</Text>
-                    <Text style={styles.bdPrice}>{item.price} FREE Delivery</Text>
-                    <View style={styles.bottomView}>
-                        <TouchableOpacity style={[styles.shareBtn,{backgroundColor : 'green'}]} onPress={()=>share()}>
-                            <Text style={{fontSize : 20, color : 'white'}}>Share</Text>
-                            <Ionicons color='white' style={{marginHorizontal : 5}} size={25} name='logo-whatsapp'/>
+                    <View style={{flexDirection : 'row', justifyContent : 'space-between', paddingHorizontal : 10, paddingVertical : 5}}>
+                        <Text style={{fontSize : 16, color : 'gray'}}>{item.name}</Text>
+                        <TouchableOpacity>
+                            <Ionicons name='heart-outline' size={30} color='#c60607'/>
                         </TouchableOpacity>
-                        <TouchableOpacity style={[styles.shareBtn,{backgroundColor : '#c60607'}]} onPress={()=>addToCart(item)}>
+                    </View>
+                    <View style={{flexDirection : 'row', paddingHorizontal : 10, alignItems : 'center'}}>
+                        <Text style={{backgroundColor : 'green', paddingHorizontal : 5, color : 'white', fontSize : 18, borderRadius : 10}}>%</Text>
+                        <Text> {Math.floor((item.regular_price-item.sale_price)*100/item.regular_price)} OFF from market price</Text>
+                    </View>
+                    <View style={{flexDirection : 'row', paddingHorizontal : 10}}>
+                        <Text style={styles.bdPrice}>₹ {item.price}</Text>
+                        <Text style={[styles.bdPrice,{color : 'gray'}]}> FREE Delivery</Text>
+                    </View>
+                    <View style={styles.bottomView}>
+                        <TouchableOpacity style={[styles.shareBtn,{borderColor : 'green'}]} onPress={()=>share()}>
+                            <Text style={{fontSize : 20, color : 'green'}}>Share</Text>
+                            <Ionicons color='green' style={{marginHorizontal : 5}} size={25} name='logo-whatsapp'/>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.shareBtn,{backgroundColor : '#c60607', borderColor : '#c60607'}]} onPress={()=>addToCart(item)}>
                             <Text style={{fontSize : 20, color : 'white'}}>Add To Cart</Text>
                             <Ionicons size={25} color='white' name='cart-outline'/>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={()=>removeFromWishlist(item.id)}>
-                            <Ionicons style={styles.icon} size={30} name='close-circle-outline'/>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -72,7 +81,9 @@ const styles = StyleSheet.create({
         flex : 1,
     },
     wishlistComp : {
-        marginVertical : 10
+        marginVertical : 5,
+        backgroundColor : 'white',
+        paddingVertical : 15
     },
     wishImg : {
         width :width,
@@ -83,12 +94,14 @@ const styles = StyleSheet.create({
         fontSize : 20
     },
     bdPrice : {
-        fontSize : 20
+        fontSize : 20,
+        fontWeight : 'bold'
     },
     bottomView : {
         flexDirection : 'row',
-        justifyContent : 'space-between',
-        alignItems : 'center'
+        justifyContent : 'space-around',
+        alignItems : 'center',
+        marginVertical : 5
     },
     shareBtn : {
         flexDirection : 'row',
@@ -96,8 +109,9 @@ const styles = StyleSheet.create({
         borderRadius : 5,
         paddingHorizontal : 10,
         paddingVertical : 5,
-        width : width*0.4,
-        justifyContent : 'center'
+        width : width*0.45,
+        justifyContent : 'center',
+        borderWidth : 1
     },
     icon : {
         backgroundColor : 'red',

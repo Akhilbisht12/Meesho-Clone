@@ -76,8 +76,8 @@ const OrderSummary = ({cart, billing, route, shipping, profile}) => {
                     <View style={[styles.colorCont]}>
                         <Text  style={[styles.fontBd,{textAlign : 'center'}]}>Choose Gift Options</Text>
                         <View style={{flexDirection : 'row'}}>
-                            <TouchableOpacity style={{padding : 5, borderWidth : 1, borderRadius : 10, width : 15}}></TouchableOpacity>
-                            <Text>Is this a gift Item</Text>
+                            <TouchableOpacity style={{padding : 5, borderWidth : 1, borderRadius : 10, width : 15, height : 15}}></TouchableOpacity>
+                            <Text>  Is this a gift Item</Text>
                         </View>
                         <TextInput style={{borderWidth : 1, borderColor : 'lightgray',height : 40, marginVertical : 5, borderRadius: 5}} placeholder='Gift Message' />
                         <Text>Note : Additional ₹75 will be charged for gift packaging</Text>
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
     },
     payBtn : {
         width : Dimensions.get('window').width - 30,
-        backgroundColor : 'red',
+        backgroundColor : '#c60607',
         paddingVertical : 5,
         borderRadius : 5
     },

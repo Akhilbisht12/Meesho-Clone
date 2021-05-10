@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },
     payBtn : {
         width : Dimensions.get('window').width - 30,
-        backgroundColor : 'red',
+        backgroundColor : '#c60607',
         paddingVertical : 5,
         borderRadius : 5
     },

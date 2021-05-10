@@ -74,7 +74,7 @@ const AddAddress = ({Parent, addShipping}) => {
             marginVertical : 5,
             borderRadius : 5,
             paddingHorizontal : 20,
-            borderColor : 'red'
+            borderColor : '#c60607'
         },
         btnText : {
             textAlign : 'center'
@@ -97,7 +97,7 @@ const AddAddress = ({Parent, addShipping}) => {
                 </View>
             </ScrollView>
             <View style={styles.btnView}>
-                <TouchableOpacity onPress={()=>{handleUserSave()}} style={[styles.btn, {backgroundColor : 'red',width : width*0.9}]}>
+                <TouchableOpacity onPress={()=>{handleUserSave()}} style={[styles.btn, {backgroundColor : '#c60607',width : width*0.9}]}>
                     <Text style={[styles.btnText, {color : 'white'}]}>Save</Text>
                 </TouchableOpacity>
             </View>
